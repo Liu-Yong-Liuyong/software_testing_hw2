@@ -19,6 +19,12 @@ jobs:
 
       - name: Install pytest
         run: pip install pytest
+      
+      - name: Install test dependencies
+        run: pip install pytest pytest-cov
+
+      - name: Run tests with coverage
+        run: pytest CalcTest.py -v --cov=Calc --cov-report=term-missing
 
       - name: Run tests
         run: pytest CalcTest.py -v
